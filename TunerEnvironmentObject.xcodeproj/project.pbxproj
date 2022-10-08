@@ -16,6 +16,8 @@
 		1D5289FA28E770BA00AFF51D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5289F928E770BA00AFF51D /* SoundpipeAudioKit */; };
 		1D5289FC28E770C700AFF51D /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289FB28E770C700AFF51D /* Tuner.swift */; };
 		1D5289FF28E7751600AFF51D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289FE28E7751600AFF51D /* SceneDelegate.swift */; };
+		1DEA53EA28F203A900FF758F /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA53E928F203A900FF758F /* Stopwatch.swift */; };
+		1DEA53EE28F20C0200FF758F /* MockTunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		1D5289FB28E770C700AFF51D /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 		1D5289FD28E7735E00AFF51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D5289FE28E7751600AFF51D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1DEA53E928F203A900FF758F /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		1D5289D828E7701000AFF51D = {
 			isa = PBXGroup;
 			children = (
+				1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */,
+				1DEA53E928F203A900FF758F /* Stopwatch.swift */,
 				1D5289E328E7701000AFF51D /* TunerEnvironmentObject */,
 				1D5289E228E7701000AFF51D /* Products */,
 			);
@@ -163,8 +169,10 @@
 			files = (
 				1D5289E728E7701000AFF51D /* ContentView.swift in Sources */,
 				1D5289FC28E770C700AFF51D /* Tuner.swift in Sources */,
+				1DEA53EA28F203A900FF758F /* Stopwatch.swift in Sources */,
 				1D5289E528E7701000AFF51D /* TunerEnvironmentObjectApp.swift in Sources */,
 				1D5289FF28E7751600AFF51D /* SceneDelegate.swift in Sources */,
+				1DEA53EE28F20C0200FF758F /* MockTunerConductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

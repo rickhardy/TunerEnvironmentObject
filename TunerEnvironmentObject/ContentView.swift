@@ -12,10 +12,11 @@ struct ContentView: View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
+                .foregroundColor(.black)
             Text("Hello, world!")
             
-            TunerView()
+            TunerView(conductorVm: TunerViewModel(tunerConductor: TunerConductor()))
+            
         }
         .padding()
     }

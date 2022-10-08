@@ -4,6 +4,7 @@ import AudioKitEX
 import AudioToolbox
 import SoundpipeAudioKit
 import SwiftUI
+import Foundation
 
 struct TunerData {
     var pitch: Float = 0.0
@@ -12,8 +13,18 @@ struct TunerData {
     var noteNameWithFlats = "-"
 }
 
-class TunerConductor: ObservableObject, HasAudioEngine {
-    @Published var data = TunerData()
+public class MockPitchTap: BaseTap {
+    private var pitch: [Float] = [0, 0]
+    private var amp: [Float] = [0, 0]
+}
+
+protocol TunerConductorProtocol : ObservableObject,  HasAudioEngine {
+    var data : TunerData { get }
+    
+}
+
+class TunerConductor: TunerConductorProtocol{
+        @Published var data = TunerData()
 
     let engine = AudioEngine()
     let initialDevice: Device
@@ -47,6 +58,7 @@ class TunerConductor: ObservableObject, HasAudioEngine {
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {
                 self.update(pitch[0], amp[0])
+                print ("Running the real conductor")
             }
         }
         tracker.start()
@@ -83,30 +95,60 @@ class TunerConductor: ObservableObject, HasAudioEngine {
     }
 }
 
-struct TunerView: View {
-    @StateObject var conductor = TunerConductor()
 
+class TunerViewModel : ObservableObject {
+    var conductor : any TunerConductorProtocol
+    @Published private var data : TunerData
+    var timer = Timer()
+    
+    
+    
+    init (tunerConductor : any TunerConductorProtocol) {
+        conductor = tunerConductor
+        data = TunerData()
+        conductor.start()
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            self.data.pitch += 1
+        print ("initiating view model")
+        print ("Object ID:", ObjectIdentifier(self) )
+        }
+    }
+    
+    var tunerData : TunerData {
+        return data
+    }
+    
+}
+
+
+struct TunerView: View {
+    @StateObject var  conductorVm : TunerViewModel // = MockTunerConductor()
+
+
+    
     var body: some View {
         VStack {
             HStack {
                 Text("Frequency")
                 Spacer()
-                Text("\(conductor.data.pitch, specifier: "%0.1f")")
+                Text("\(conductorVm.conductor.data.pitch, specifier: "%0.1f")")
             }.padding()
 
             HStack {
                 Text("Amplitude")
                 Spacer()
-                Text("\(conductor.data.amplitude, specifier: "%0.1f")")
+                Text("\(conductorVm.conductor.data.amplitude, specifier: "%0.1f")")
             }.padding()
 
             HStack {
                 Text("Note Name")
                 Spacer()
-                Text("\(conductor.data.noteNameWithSharps) / \(conductor.data.noteNameWithFlats)")
+                Text("\(conductorVm.conductor.data.noteNameWithSharps) / \(conductorVm.conductor.data.noteNameWithFlats)")
             }.padding()
+      
+            
 
-            InputDevicePicker(device: conductor.initialDevice)
+            //InputDevicePicker(device: conductor.initialDevice)
 
             //NodeRollingView(conductor.tappableNodeA).clipped()
 
@@ -116,10 +158,11 @@ struct TunerView: View {
         }
         //.cookbookNavBarTitle("Tuner")
         .onAppear {
-            conductor.start()
+            //conductorVm.conductor.start()
+            //conductorVm.conductor.update(5.0, 2.5)
         }
         .onDisappear {
-            conductor.stop()
+            //conductorVm.stop()
         }
     }
 }
