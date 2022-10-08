@@ -15,7 +15,8 @@ struct ContentView: View {
                 .foregroundColor(.black)
             Text("Hello, world!")
             
-            TunerView(conductorVm: TunerViewModel(tunerConductor: TunerConductor()))
+            // TunerView(conductorVm: TunerViewModel(tunerConductor: TunerConductor()))
+            TunerView(conductorVm: TunerViewModel(tunerConductor: MockTunerConductor()))
             
         }
         .padding()
