@@ -67,7 +67,7 @@ class TunerConductor: TunerConductorProtocol{
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {
                 self.update(pitch[0], amp[0])
-                print ("Running the real conductor")
+                print ("Running the real conductor" , pitch)
             }
         }
         tracker.start()
