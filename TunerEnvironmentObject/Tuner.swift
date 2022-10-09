@@ -20,10 +20,10 @@ class TunerViewModel : ObservableObject {
         conductor = tunerConductor
         pitch = 0.0
         conductor.start()
-        
         ///This timer is only here to force the TunerViewModel to refresh its observable object
+        
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-            self.pitch += 1
+            self.pitch = 0 // self.conductor.published_pitch
         }
     }
 }
@@ -46,10 +46,9 @@ struct TunerView: View {
 /**This is the observable object **/
 /// Observes the mic using a pitch tap supplied by Audiokit
 class TunerConductor: TunerConductorProtocol{
-    //@Published var data = TunerData()
-    @Published var published_pitch : Float = 0.0
-    @Published var amplitude : Float = 0.0
-
+    
+    var published_pitch : Float = 0.0
+    var amplitude : Float = 0.0
     let engine = AudioEngine()
     let initialDevice: Device
     let mic: AudioEngine.InputNode
@@ -84,8 +83,8 @@ class TunerConductor: TunerConductorProtocol{
 
 /// The Mock just increments the pitch forever, not using the mic
 class MockTunerConductor: TunerConductorProtocol {
-    @Published var published_pitch : Float = 0.0
-    @Published var amplitude : Float = 0.0
+    var published_pitch : Float = 0.0
+    var amplitude : Float = 0.0
     let engine = AudioEngine() // Dummy engine, Not used, required to conform to protocol
     var timer = Timer()
     init () {
@@ -101,7 +100,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TunerView(conductorVm: TunerViewModel(tunerConductor: TunerConductor()))
-            //TunerView(conductorVm: TunerViewModel(tunerConductor: MockTunerConductor()))
+            TunerView(conductorVm: TunerViewModel(tunerConductor: MockTunerConductor()))
         }
     }
 }
