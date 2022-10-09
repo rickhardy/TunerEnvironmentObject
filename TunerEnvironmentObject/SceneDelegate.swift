@@ -1,8 +1,6 @@
 import SwiftUI
 
-struct ColorManager {
-    static let accentColor = Color("AccentColor")
-}
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -12,14 +10,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         
-        //let splashView = SplashView()
-        let splashView = ContentView() // To go directly to content view
-        
-        
-            .accentColor(ColorManager.accentColor)
-        if let windowScene = scene as? UIWindowScene {
+            if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: splashView)
+            window.rootViewController = UIHostingController(rootView: ContentView())
             self.window = window
             window.makeKeyAndVisible()
         }

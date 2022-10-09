@@ -8,29 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		1D5289E528E7701000AFF51D /* TunerEnvironmentObjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289E428E7701000AFF51D /* TunerEnvironmentObjectApp.swift */; };
-		1D5289E728E7701000AFF51D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289E628E7701000AFF51D /* ContentView.swift */; };
 		1D5289E928E7701100AFF51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5289E828E7701100AFF51D /* Assets.xcassets */; };
 		1D5289EC28E7701100AFF51D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5289EB28E7701100AFF51D /* Preview Assets.xcassets */; };
 		1D5289F428E7709300AFF51D /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5289F328E7709300AFF51D /* AudioKit */; };
 		1D5289F728E770A300AFF51D /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5289F628E770A300AFF51D /* AudioKitEX */; };
 		1D5289FA28E770BA00AFF51D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5289F928E770BA00AFF51D /* SoundpipeAudioKit */; };
 		1D5289FC28E770C700AFF51D /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289FB28E770C700AFF51D /* Tuner.swift */; };
-		1D5289FF28E7751600AFF51D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5289FE28E7751600AFF51D /* SceneDelegate.swift */; };
-		1DEA53EA28F203A900FF758F /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA53E928F203A900FF758F /* Stopwatch.swift */; };
-		1DEA53EE28F20C0200FF758F /* MockTunerConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D5289E128E7701000AFF51D /* TunerEnvironmentObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunerEnvironmentObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5289E428E7701000AFF51D /* TunerEnvironmentObjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerEnvironmentObjectApp.swift; sourceTree = "<group>"; };
-		1D5289E628E7701000AFF51D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1D5289E828E7701100AFF51D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D5289EB28E7701100AFF51D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D5289FB28E770C700AFF51D /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 		1D5289FD28E7735E00AFF51D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1D5289FE28E7751600AFF51D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DEA53E928F203A900FF758F /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
-		1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTunerConductor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +42,6 @@
 		1D5289D828E7701000AFF51D = {
 			isa = PBXGroup;
 			children = (
-				1DEA53ED28F20C0200FF758F /* MockTunerConductor.swift */,
-				1DEA53E928F203A900FF758F /* Stopwatch.swift */,
 				1D5289E328E7701000AFF51D /* TunerEnvironmentObject */,
 				1D5289E228E7701000AFF51D /* Products */,
 			);
@@ -68,11 +58,9 @@
 		1D5289E328E7701000AFF51D /* TunerEnvironmentObject */ = {
 			isa = PBXGroup;
 			children = (
-				1D5289FE28E7751600AFF51D /* SceneDelegate.swift */,
 				1D5289FD28E7735E00AFF51D /* Info.plist */,
 				1D5289FB28E770C700AFF51D /* Tuner.swift */,
 				1D5289E428E7701000AFF51D /* TunerEnvironmentObjectApp.swift */,
-				1D5289E628E7701000AFF51D /* ContentView.swift */,
 				1D5289E828E7701100AFF51D /* Assets.xcassets */,
 				1D5289EA28E7701100AFF51D /* Preview Content */,
 			);
@@ -167,12 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5289E728E7701000AFF51D /* ContentView.swift in Sources */,
 				1D5289FC28E770C700AFF51D /* Tuner.swift in Sources */,
-				1DEA53EA28F203A900FF758F /* Stopwatch.swift in Sources */,
 				1D5289E528E7701000AFF51D /* TunerEnvironmentObjectApp.swift in Sources */,
-				1D5289FF28E7751600AFF51D /* SceneDelegate.swift in Sources */,
-				1DEA53EE28F20C0200FF758F /* MockTunerConductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
